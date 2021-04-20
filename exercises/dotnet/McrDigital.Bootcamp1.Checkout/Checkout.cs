@@ -17,8 +17,8 @@ namespace McrDigital.Bootcamp1.Checkout {
       if ("A".Equals(sku)) {
         this._total += 50;
         this._numberOfA++;
-        if (this._numberOfA % 3 == 0) {
-          this._total -= 20;
+        if (this._numberOfA % 5 == 0) {
+          this._total -= 30;
         }
         this._receipt.ScannedA();
       } else if ("B".Equals(sku)) {

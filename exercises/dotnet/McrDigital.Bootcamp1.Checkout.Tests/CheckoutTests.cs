@@ -31,10 +31,23 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       checkout.Scan("A");
       checkout.Scan("A");
 
-      Assert.Equal(130, checkout.Total);
+      Assert.Equal(150, checkout.Total);
     }
 
     [Fact]
+    public void FiveA() {
+      var checkout = new Checkout();
+
+      checkout.Scan("A");
+      checkout.Scan("A");
+      checkout.Scan("A");
+      checkout.Scan("A");
+      checkout.Scan("A");
+
+      Assert.Equal(220, checkout.Total);
+    }
+
+        [Fact]
     public void SixA() {
       var checkout = new Checkout();
 
@@ -45,8 +58,9 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       checkout.Scan("A");
       checkout.Scan("A");
 
-      Assert.Equal(260, checkout.Total);
+      Assert.Equal(270, checkout.Total);
     }
+
     [Fact]
     public void OneB() {
       var checkout = new Checkout();
@@ -109,31 +123,31 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       Assert.Equal(130, checkout.Total);
       
       checkout.Scan("A");
-      Assert.Equal(160, checkout.Total);
+      Assert.Equal(180, checkout.Total);
       
       checkout.Scan("B");
-      Assert.Equal(175, checkout.Total);
-      
-      checkout.Scan("C");
       Assert.Equal(195, checkout.Total);
       
-      checkout.Scan("B");
-      Assert.Equal(225, checkout.Total);
-      
       checkout.Scan("C");
+      Assert.Equal(215, checkout.Total);
+      
+      checkout.Scan("B");
       Assert.Equal(245, checkout.Total);
       
-      checkout.Scan("D");
-      Assert.Equal(260, checkout.Total);
+      checkout.Scan("C");
+      Assert.Equal(265, checkout.Total);
       
       checkout.Scan("D");
-      Assert.Equal(275, checkout.Total);
+      Assert.Equal(280, checkout.Total);
       
       checkout.Scan("D");
-      Assert.Equal(290, checkout.Total);
+      Assert.Equal(295, checkout.Total);
+      
+      checkout.Scan("D");
+      Assert.Equal(310, checkout.Total);
       
       checkout.Scan("C");
-      Assert.Equal(310, checkout.Total);
+      Assert.Equal(330, checkout.Total);
     }
   }
 }
