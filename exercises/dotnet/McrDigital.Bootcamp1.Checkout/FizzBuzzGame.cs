@@ -27,10 +27,18 @@ namespace apprentice_bootcamp_fundamentals_2
         {
             threeCounter++;
             fiveCounter--;
-            bool isThree = threeCounter == THREE_HEX;
-            bool isFive = fiveCounter == 0;
 
-            return CheckFizzOrBuzz(currentNumber, isThree, isFive);
+            return CheckFizzOrBuzz(currentNumber, IsFizz(), IsBuzz());
+        }
+
+        private bool IsBuzz()
+        {
+            return fiveCounter == 0;
+        }
+
+        private bool IsFizz()
+        {
+            return threeCounter == THREE_HEX;
         }
 
         private string CheckFizzOrBuzz(int currentNumber, bool isThree, bool isFive)
