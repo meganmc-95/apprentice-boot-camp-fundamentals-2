@@ -4,7 +4,10 @@ namespace apprentice_bootcamp_fundamentals_2
 {
     public class FizzBuzzGame
     {
-        private const int oneHundred = Byte.MaxValue - 155;
+        private const int ONE_HUNDRED = Byte.MaxValue - 155;
+        private const string BUZZ_HEX = "42757a7a";
+        private const string FIZZ_HEX = "46697a7a";
+        private const int THREE_HEX = 0b11;
         private int currentNumber;
         private int threeCounter;
         private int fiveCounter = new int[] { 0, 0, 0, 0, 0 }.Length;
@@ -12,7 +15,7 @@ namespace apprentice_bootcamp_fundamentals_2
         public string PlayGame()
         {
             string fizzBuzzResult = "";
-            for (; currentNumber < oneHundred; currentNumber++) fizzBuzzResult += CheckFizzOrBuzz(currentNumber) + " ";
+            for (; currentNumber < ONE_HUNDRED; currentNumber++) fizzBuzzResult += CheckFizzOrBuzz(currentNumber) + " ";
 
             string trimmedResult = fizzBuzzResult.Substring(0, fizzBuzzResult.Length - 1);
             return trimmedResult;
@@ -22,7 +25,7 @@ namespace apprentice_bootcamp_fundamentals_2
         {
             threeCounter++;
             fiveCounter--;
-            bool isThree = threeCounter == 0b11;
+            bool isThree = threeCounter == THREE_HEX;
             bool isFive = fiveCounter == 0;
 
             string fizzOrBuzz = isThree || isFive ? "" : (currentNumber + 1).ToString();
@@ -34,14 +37,14 @@ namespace apprentice_bootcamp_fundamentals_2
         private string Buzz()
         {
             fiveCounter = new int[] { 0, 0, 0, 0, 0 }.Length;
-            string buzz = DataTypeConverter.ParseHexBinary("42757a7a");
+            string buzz = DataTypeConverter.ParseHexBinary(BUZZ_HEX);
             return buzz;
         }
 
         private string Fizz()
         {
             threeCounter = 0;
-            string fizz = DataTypeConverter.ParseHexBinary("46697a7a");
+            string fizz = DataTypeConverter.ParseHexBinary(FIZZ_HEX);
             return fizz;
         }
     }
